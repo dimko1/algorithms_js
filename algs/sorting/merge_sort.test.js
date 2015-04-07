@@ -1,5 +1,5 @@
 require('./../../utils/array.utils');
-var sort_algs = require('./shell_sort');
+var sort_algs = require('./merge_sort');
 
 var array = [];
 array.generate_numbers(100);
@@ -37,3 +37,4 @@ array.generate_numbers(10000000);
 console.time('10000000elements');
 sort_algs(array);
 console.timeEnd('10000000elements');
+
