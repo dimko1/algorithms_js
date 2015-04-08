@@ -31,3 +31,15 @@ Array.prototype.knuth_shuffle = function() {
 		this.swap(i, random); 
 	}
 };
+
+/**
+ * function validates array if it is sorted
+ */
+Array.prototype.validate_sorted = function(){
+	for (var i = 0; i < this.length - 1; i++){
+		if (this[i] > this[i+1])
+			return false;
+	}
+
+	return true;
+};

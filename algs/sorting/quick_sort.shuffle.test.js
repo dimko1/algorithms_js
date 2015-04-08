@@ -1,8 +1,9 @@
 require('./../../utils/array.utils');
-var sort_algs = require('./shell_sort');
+var sort_algs = require('./quick_sort');
 
 var array = [];
 array.generate_numbers(100);
+array.knuth_shuffle();
 //soring 100 elements
 console.time('100elements');
 sort_algs(array);
@@ -10,30 +11,36 @@ console.timeEnd('100elements');
 
 //sorting 1000 elements
 array.generate_numbers(1000);
+array.knuth_shuffle();
 console.time('1000elements');
 sort_algs(array);
 console.timeEnd('1000elements');
 
 //sorting 10000 elements
 array.generate_numbers(10000);
+array.knuth_shuffle();
 console.time('10000elements');
 sort_algs(array);
 console.timeEnd('10000elements');
 
 //sorting 100000 elements
 array.generate_numbers(100000);
+array.knuth_shuffle();
 console.time('100000elements');
 sort_algs(array);
 console.timeEnd('100000elements');
 
-//sorting 1000000 elements
+//sorting 100000 elements
 array.generate_numbers(1000000);
+array.knuth_shuffle();
 console.time('1000000elements');
 sort_algs(array);
 console.timeEnd('1000000elements');
 
-//sorting 10000000 elements
+//sorting 100000 elements
 array.generate_numbers(10000000);
+array.knuth_shuffle();
 console.time('10000000elements');
 sort_algs(array);
 console.timeEnd('10000000elements');
+
