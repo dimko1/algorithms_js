@@ -21,6 +21,13 @@ Array.prototype.generate_numbers = function(amount){
 }
 
 /**
+ * current function is used to find maximum number in array
+ */
+Array.prototype.max = function() {
+	return Math.max.apply(null, this);
+};
+
+/**
  * current function is used to shuffle array using knuth shuffle algorithm
  */
 Array.prototype.knuth_shuffle = function() {
