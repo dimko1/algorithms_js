@@ -15,7 +15,7 @@ var sleep_sort = function(array, callback){
 
 	setTimeout(function(){
 		return callback(sorted);
-	}, array.length);
+	}, array.max() + 1);
 };
 
 module.exports = sleep_sort;
