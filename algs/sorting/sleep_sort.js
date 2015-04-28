@@ -6,10 +6,9 @@ var sleep_sort = function(array, callback){
 	var sorted = [];
 
 	array.forEach(function(element){
-	    var el = element;
 	    setTimeout( 
 	     function(){
-	        sorted.push(el);
+	        sorted.push(element);
 	    }, element);
 	});
 

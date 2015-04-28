@@ -76,6 +76,29 @@ BinaryTree.prototype.ceil = function(key){
 	return n;
 }
 
+BinaryTree.prototype.deleteNode = function(key){
+  this.root = deleteNode(this.root, key);
+}
+
+/**
+ * deletes node
+ */
+function deleteNode(node, key){
+  if (!node) return null;
+  if (node.key > key) node.left = deleteNode(node.left, key); 
+  else if (node.key < key) node.right = deleteNode(node.right, key);
+  else {
+    if (!node.right) return node.left;
+    if (!node.left) return node.right;
+    var t = node;
+    node = getMin(t.right);
+    node.right = deleteMin(t.right);
+    node.left = t.left;
+ }
+  node.count = 1 + getSize(node.left) + getSize(node.right);
+  return node;
+}
+
 /**
  * recursive function used to delete minimal item in the tree
  * recuresively we are checking if node has left child. if no - return right child.
