@@ -76,8 +76,80 @@ BinaryTree.prototype.ceil = function(key){
 	return n;
 }
 
+/**
+ * deletes the node
+ */
 BinaryTree.prototype.deleteNode = function(key){
   this.root = deleteNode(this.root, key);
+}
+
+/**
+ * pre order traversing
+ */
+BinaryTree.prototype.preOrder = function() {
+	preOrder(this.root);
+}
+
+/**
+ * in order traversing
+ */
+BinaryTree.prototype.inOrder = function() {
+	inOrder(this.root);
+}
+
+/**
+ * post order traversing
+ */
+BinaryTree.prototype.postOrder = function() {
+	postOrder(this.root);
+}
+
+/**
+ * post order traversing
+ */
+BinaryTree.prototype.bfs = function() {
+	return bfs(this.root);
+}
+
+function preOrder(node){
+	if (node == null) return;
+	console.log(node.value);
+	preOrder(node.left);
+	preOrder(node.right);
+}
+
+function inOrder(node){
+	if (node == null) return;
+	inOrder(node.left);
+	console.log(node.value);
+	inOrder(node.right);
+}
+
+function postOrder(node){
+	if (node == null) return;
+	postOrder(node.left);
+	postOrder(node.right);
+	console.log(node.value);
+}
+
+function bfs(node){
+	var queue = [];
+	var values = [];
+	queue.push(node);
+
+	while(queue.length > 0){
+		var tempNode = queue.shift();
+		values.push(tempNode.value);
+		if (tempNode.left){
+			queue.push(tempNode.left);
+		}
+
+		if (tempNode.right){
+			queue.push(tempNode.right);
+		}
+	}
+
+	return values;
 }
 
 /**
