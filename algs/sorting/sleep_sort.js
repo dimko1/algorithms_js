@@ -3,7 +3,8 @@ require('./../../utils/array.utils');
 
 
 var sleep_sort = function(array, callback){		
-	var sorted = [];
+	var sorted = [],
+	    sortedTimeout = array.reduce(function(res,el){return res+el;},0);
 
 	array.forEach(function(element){
 	    setTimeout( 
@@ -14,7 +15,7 @@ var sleep_sort = function(array, callback){
 
 	setTimeout(function(){
 		return callback(sorted);
-	}, array.length);
+	}, sortedTimeout);
 };
 
 module.exports = sleep_sort;
